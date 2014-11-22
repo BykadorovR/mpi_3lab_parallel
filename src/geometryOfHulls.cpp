@@ -123,8 +123,8 @@ void GeometryOfHulls::getPointsLeftByLine(const std::vector<point> &vertex, cons
 }
 
 bool GeometryOfHulls::nesting(point &vertex, std::vector<line> &vline){
-	bool isLeft = false;
-
+	if (vline.size() == 0) return false;
+    bool isLeft = false;
 	for (int i=0; i<vline.size(); i++)
 	    if (vline[i].isLeft(vertex))
 	        return false;
